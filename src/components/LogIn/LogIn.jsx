@@ -3,6 +3,8 @@ import styles from 'styled-components';
 import bg from '../../assets/images/bg.png';
 import Logo from '../shared/Logo';
 import Heading from '../shared/Heading';
+import Input from '../shared/Input';
+import Submit from '../shared/Submit';
 
 const Wrapper = styles.div`
     min-height: 100vh;
@@ -55,35 +57,6 @@ const Form = styles.form`
     flex-direction: column;
 `;
 
-const Input = styles.input`
-    margin-bottom: 40px;
-    width: 100%;
-    padding: 8px 0;
-    font-size: 16px;
-    border: 0;
-    border-bottom: 2px solid #eaeaea;
-    transition: border-color 0.4s;
-    
-    &:hover {
-        border-color: #1473e6;
-    }  
-      
-    &:focus {
-        outline: none;
-        border-color: #1473e6;
-    }
-`;
-
-const Submit = styles.button`
-    align-self: flex-end;
-    padding: 15px 50px;
-    font-size: 21px;
-    font-weight: 400;
-    border: 0;
-    border-radius: 4px;
-    background-color: #ffc617;
-`;
-
 const LogIn = ({ setPage }) => {
     const submitForm = e => {
         e.preventDefault();
@@ -107,7 +80,7 @@ const LogIn = ({ setPage }) => {
                         <Input type="text" id="username" placeholder="Введите имя" />
                         <Label htmlFor="password">Пароль*</Label>
                         <Input type="password" id="password" placeholder="Введите пароль" />
-                        <Submit type="submit">Войти</Submit>
+                        <Submit name="Войти" />
                     </Form>
                 </FormContainer>
             </Wrapper>

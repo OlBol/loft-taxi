@@ -8,10 +8,10 @@ const H2 = styles.h2`
     font-weight: 700;
 `;
 
-const Heading = props => {
+const Heading = ({ title }) => {
     return (
         <>
-            <H2>{props.title}</H2>
+            <H2>{title}</H2>
         </>
     );
 };
