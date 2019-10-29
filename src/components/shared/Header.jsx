@@ -10,10 +10,13 @@ const Wrapper = styles.header`
 `;
 
 const Button = styles.button`
+    padding: 10px 15px;
     color: #333;
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
+    background-color: ${props => (props.colored ? '#ffc617' : 'transparent')};
+    border-radius: 10px;
 `;
 
 const Item = styles.li`
@@ -26,7 +29,7 @@ const List = styles.ul`
     list-style-type: none;
 `;
 
-const Header = ({ setPage }) => {
+const Header = ({ page, setPage }) => {
     const onClick = link => {
         return () => setPage(link);
     };
@@ -39,10 +42,10 @@ const Header = ({ setPage }) => {
                     <nav>
                         <List>
                             <Item>
-                                <Button onClick={onClick('map')}>Карта</Button>
+                                <Button onClick={onClick('map')} colored={page === 'map'}>Карта</Button>
                             </Item>
                             <Item>
-                                <Button onClick={onClick('profile')}>Профиль</Button>
+                                <Button onClick={onClick('profile')} colored={page === 'profile'}>Профиль</Button>
                             </Item>
                             <Item>
                                 <Button onClick={onClick('login')}>Выйти</Button>

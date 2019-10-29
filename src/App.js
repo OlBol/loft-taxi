@@ -19,7 +19,7 @@ export const App = () => {
         <>{pages[page](setPage)}</>
     ) : (
         <>
-            <Header setPage={setPage} />
+            <Header page={page} setPage={setPage} />
             {pages[page](setPage)}
         </>
     );
