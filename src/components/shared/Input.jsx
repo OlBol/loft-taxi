@@ -20,12 +20,8 @@ const StyledInput = styles.input`
     }
 `;
 
-const Input = ({ type, id, placeholder }) => {
-    return (
-        <>
-            <StyledInput type={type} id={id} placeholder={placeholder} />
-        </>
-    );
-};
+const Input = ({ type, id, placeholder }) => (
+    <StyledInput type={type} id={id} placeholder={placeholder} />
+);
 
 export default Input;

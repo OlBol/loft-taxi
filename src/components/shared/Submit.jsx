@@ -11,12 +11,6 @@ const StyledSubmit = styles.button`
     background-color: #ffc617;
 `;
 
-const Submit = ({ name }) => {
-    return (
-        <>
-            <StyledSubmit type="submit">{name}</StyledSubmit>
-        </>
-    );
-};
+const Submit = ({ name }) => <StyledSubmit type="submit">{name}</StyledSubmit>;
 
 export default Submit;

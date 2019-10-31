@@ -13,7 +13,8 @@ const pages = {
 };
 
 export const App = () => {
-    const [page, setPage] = React.useState('login');
+    // const [page, setPage] = React.useState('login');
+    const [page, setPage] = React.useState('map');
 
     return page === 'login' || page === 'signup' ? (
         <>{pages[page](setPage)}</>

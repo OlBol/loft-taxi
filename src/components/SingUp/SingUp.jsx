@@ -68,7 +68,7 @@ const SingUp = ({ setPage }) => {
     return (
         <>
             <Wrapper>
-                <Logo />
+                <Logo colored="white" />
                 <FormContainer>
                     <Heading title="Войти" />
                     <Text>

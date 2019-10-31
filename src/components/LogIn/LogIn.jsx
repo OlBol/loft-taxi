@@ -57,35 +57,61 @@ const Form = styles.form`
     flex-direction: column;
 `;
 
-const LogIn = ({ setPage }) => {
-    const submitForm = e => {
+class LogIn extends React.Component {
+    state = { username: '', password: '' };
+
+    submitForm = e => {
         e.preventDefault();
-        setPage('map');
+        this.props.setPage('map');
     };
 
-    const showSignUpPage = () => setPage('signup');
+    handleUsernameChange = e => {
+        this.setState({ username: e.target.value });
+    };
 
-    return (
-        <>
-            <Wrapper>
-                <Logo />
-                <FormContainer>
-                    <Heading title="Войти" />
-                    <Text>
-                        Новый пользователь?&nbsp;
-                        <Button onClick={showSignUpPage}>Зарегистрируйтесь</Button>
-                    </Text>
-                    <Form onSubmit={submitForm}>
-                        <Label htmlFor="username">Имя пользователя*</Label>
-                        <Input type="text" id="username" placeholder="Введите имя" />
-                        <Label htmlFor="password">Пароль*</Label>
-                        <Input type="password" id="password" placeholder="Введите пароль" />
-                        <Submit name="Войти" />
-                    </Form>
-                </FormContainer>
-            </Wrapper>
-        </>
-    );
-};
+    handlePasswordChange = e => {
+        this.setState({ password: e.target.value });
+    };
+
+    showSignUpPage = () => this.props.setPage('signup');
+
+    render() {
+        const { username, password } = this.state;
+
+        return (
+            <>
+                <Wrapper>
+                    <Logo colored="white" />
+                    <FormContainer>
+                        <Heading title="Войти" />
+                        <Text>
+                            Новый пользователь?&nbsp;
+                            <Button onClick={this.showSignUpPage}>Зарегистрируйтесь</Button>
+                        </Text>
+                        <Form onSubmit={this.submitForm}>
+                            <Label htmlFor="username">Имя пользователя*</Label>
+                            <Input
+                                type="text"
+                                id="username"
+                                value={username}
+                                placeholder="Введите имя"
+                                onChange={this.handleUsernameChange}
+                            />
+                            <Label htmlFor="password">Пароль*</Label>
+                            <Input
+                                type="password"
+                                id="password"
+                                value={password}
+                                placeholder="Введите пароль"
+                                onChange={this.handlePasswordChange}
+                            />
+                            <Submit name="Войти" />
+                        </Form>
+                    </FormContainer>
+                </Wrapper>
+            </>
+        );
+    }
+}
 
 export default LogIn;

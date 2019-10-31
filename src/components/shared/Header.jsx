@@ -38,14 +38,18 @@ const Header = ({ page, setPage }) => {
         <>
             <div className="container">
                 <Wrapper>
-                    <Logo />
+                    <Logo colored="black" />
                     <nav>
                         <List>
                             <Item>
-                                <Button onClick={onClick('map')} colored={page === 'map'}>Карта</Button>
+                                <Button onClick={onClick('map')} colored={page === 'map'}>
+                                    Карта
+                                </Button>
                             </Item>
                             <Item>
-                                <Button onClick={onClick('profile')} colored={page === 'profile'}>Профиль</Button>
+                                <Button onClick={onClick('profile')} colored={page === 'profile'}>
+                                    Профиль
+                                </Button>
                             </Item>
                             <Item>
                                 <Button onClick={onClick('login')}>Выйти</Button>
