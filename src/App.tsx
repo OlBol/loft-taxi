@@ -5,14 +5,14 @@ import Map from './components/Map/Map';
 import LogIn from './components/LogIn/LogIn';
 import SingUp from './components/SingUp/SingUp';
 
-const pages = {
+const pages: any = {
     profile: () => <Profile />,
     map: () => <Map />,
-    login: setPage => <LogIn setPage={setPage} />,
-    signup: setPage => <SingUp setPage={setPage} />,
+    login: (setPage: any) => <LogIn setPage={setPage} />,
+    signup: (setPage: any) => <SingUp setPage={setPage} />,
 };
 
-export const App = () => {
+const App: React.FC = () => {
     // const [page, setPage] = React.useState('login');
     const [page, setPage] = React.useState('map');
 

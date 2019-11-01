@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from 'styled-components';
+import styled from 'styled-components';
 
-const StyledSubmit = styles.button`
+const StyledSubmit = styled.button`
     align-self: flex-end;
     padding: 15px 50px;
     font-size: 21px;
