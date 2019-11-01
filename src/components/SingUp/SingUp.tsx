@@ -57,8 +57,8 @@ const Form = styled.form`
     flex-direction: column;
 `;
 
-const SingUp = ({ setPage }) => {
-    const submitForm = e => {
+const SingUp = ({ setPage }: { setPage: any }) => {
+    const submitForm = (e: React.SyntheticEvent) => {
         e.preventDefault();
         setPage('map');
     };

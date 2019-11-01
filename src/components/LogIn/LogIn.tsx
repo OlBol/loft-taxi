@@ -6,26 +6,33 @@ import Heading from '../shared/Heading';
 import Input from '../shared/Input';
 import Submit from '../shared/Submit';
 
-class LogIn extends React.Component {
-    state = { username: '', password: '' };
+interface SampleProps {
+    setPage: any;
+}
 
-    submitForm = e => {
+class LogIn extends React.Component<SampleProps> {
+    // constructor(props: SampleProps) {
+    // super(props);
+    // this.state = {username: '', password: ''};
+    // }
+
+    submitForm = (e: React.SyntheticEvent) => {
         e.preventDefault();
         this.props.setPage('map');
     };
 
-    handleUsernameChange = e => {
-        this.setState({ username: e.target.value });
-    };
-
-    handlePasswordChange = e => {
-        this.setState({ password: e.target.value });
-    };
+    // handleUsernameChange = (e: React.SyntheticEvent) => {
+    //     this.setState({ username: e.target.value });
+    // };
+    //
+    // handlePasswordChange = (e: React.SyntheticEvent) => {
+    //     this.setState({ password: e.target.value });
+    // };
 
     showSignUpPage = () => this.props.setPage('signup');
 
     render() {
-        const { username, password } = this.state;
+        // const { username, password } = this.state;
 
         return (
             <>
@@ -42,17 +49,17 @@ class LogIn extends React.Component {
                             <Input
                                 type="text"
                                 id="username"
-                                value={username}
                                 placeholder="Введите имя"
-                                onChange={this.handleUsernameChange}
+                                // value={username}
+                                // onChange={this.handleUsernameChange}
                             />
                             <Label htmlFor="password">Пароль*</Label>
                             <Input
                                 type="password"
                                 id="password"
-                                value={password}
                                 placeholder="Введите пароль"
-                                onChange={this.handlePasswordChange}
+                                // value={password}
+                                // onChange={this.handlePasswordChange}
                             />
                             <Submit name="Войти" />
                         </Form>

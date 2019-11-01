@@ -5,6 +5,13 @@ import Map from './components/Map/Map';
 import LogIn from './components/LogIn/LogIn';
 import SingUp from './components/SingUp/SingUp';
 
+// interface LayoutPages {
+//     profile: any;
+//     map: any;
+//     login: any;
+//     signup: any;
+// }
+
 const pages: any = {
     profile: () => <Profile />,
     map: () => <Map />,
@@ -25,5 +32,27 @@ const App: React.FC = () => {
         </>
     );
 };
+
+// class App extends React.Component {
+//     // const [page, setPage] = React.useState('login');
+//     // const [page, setPage] = React.useState('map');
+//     // constructor(props) {
+//     //     super(props);
+//         state: LayoutPages = {
+//             page: 'login'
+//         };
+//     // }
+//
+//     rendor() {
+//         return page === 'login' || page === 'signup' ? (
+//             <>{pages[page](setPage)}</>
+//         ) : (
+//             <>
+//                 <Header page={page} setPage={setPage}/>
+//                 {pages[page](setPage)}
+//             </>
+//         );
+//     }
+// };
 
 export default App;

@@ -20,7 +20,7 @@ const StyledInput = styled.input`
     }
 `;
 
-const Input = ({ type, id, placeholder }) => (
+const Input = ({ type, id, placeholder }: { type: string; id: string; placeholder: string }) => (
     <StyledInput type={type} id={id} placeholder={placeholder} />
 );
 

@@ -8,7 +8,7 @@ const LogoImg = styled.img`
     height: 37px;
 `;
 
-const Logo = ({ colored }) => {
+const Logo = ({ colored }: { colored: string }) => {
     return colored === 'white' ? (
         <LogoImg src={logoWhite} alt="Логотип компании" />
     ) : (

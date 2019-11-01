@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Heading = ({ title }) => <H2>{title}</H2>;
+const Heading = ({ title }: { title: string }) => <H2>{title}</H2>;
 
 export default Heading;
 
