@@ -4,8 +4,12 @@ import mapbox from 'mapbox-gl';
 
 class Map extends React.Component {
     currentMap: any;
+    mapNode: any;
 
-    mapNode: any = React.createRef<HTMLDivElement>();
+    constructor(props: any) {
+        super(props);
+        this.mapNode = React.createRef<HTMLDivElement>();
+    }
 
     componentDidMount() {
         mapbox.accessToken =
