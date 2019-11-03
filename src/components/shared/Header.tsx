@@ -4,36 +4,34 @@ import Logo from './Logo';
 
 const Header = ({ page, setPage }: { page: any; setPage: any }) => {
     const onClick = (link: string) => {
-        return () => setPage(link);
+        setPage(link);
     };
 
     return (
-        <>
-            <Wrapper>
-                <Container>
-                    <Logo colored="black" />
-                    <nav>
-                        <List>
-                            <Item>
-                                <Button onClick={onClick('map')} colored={page === 'map'}>
-                                    Карта
-                                </Button>
-                            </Item>
-                            <Item>
-                                <Button onClick={onClick('profile')} colored={page === 'profile'}>
-                                    Профиль
-                                </Button>
-                            </Item>
-                            <Item>
-                                <Button onClick={onClick('login')} colored={false}>
-                                    Выйти
-                                </Button>
-                            </Item>
-                        </List>
-                    </nav>
-                </Container>
-            </Wrapper>
-        </>
+        <Wrapper>
+            <Container>
+                <Logo colored="black" />
+                <nav>
+                    <List>
+                        <Item>
+                            <Button onClick={() => onClick('map')} colored={page === 'map'}>
+                                Карта
+                            </Button>
+                        </Item>
+                        <Item>
+                            <Button onClick={() => onClick('profile')} colored={page === 'profile'}>
+                                Профиль
+                            </Button>
+                        </Item>
+                        <Item>
+                            <Button onClick={() => onClick('login')} colored={false}>
+                                Выйти
+                            </Button>
+                        </Item>
+                    </List>
+                </nav>
+            </Container>
+        </Wrapper>
     );
 };
 

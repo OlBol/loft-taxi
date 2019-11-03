@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Input = ({ type, id, placeholder }: { type: string; id: string; placeholder: string }) => (
+    <StyledInput type={type} id={id} placeholder={placeholder} />
+);
+
+export default Input;
+
 const StyledInput = styled.input`
     margin-bottom: 40px;
     width: 100%;
@@ -19,9 +25,3 @@ const StyledInput = styled.input`
         border-color: #1473e6;
     }
 `;
-
-const Input = ({ type, id, placeholder }: { type: string; id: string; placeholder: string }) => (
-    <StyledInput type={type} id={id} placeholder={placeholder} />
-);
-
-export default Input;

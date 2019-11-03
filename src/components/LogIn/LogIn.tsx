@@ -4,10 +4,10 @@ import bg from '../../assets/images/bg.png';
 import Logo from '../shared/Logo';
 import Heading from '../shared/Heading';
 import Input from '../shared/Input';
-import Submit from '../shared/Submit';
+import Button from '../shared/Button';
 
 interface SampleProps {
-    setPage: any;
+    setPage: (path: string) => void;
 }
 
 class LogIn extends React.Component<SampleProps> {
@@ -17,8 +17,9 @@ class LogIn extends React.Component<SampleProps> {
     // }
 
     submitForm = (e: React.SyntheticEvent) => {
+        const { setPage } = this.props;
         e.preventDefault();
-        this.props.setPage('map');
+        setPage('map');
     };
 
     // handleUsernameChange = (e: React.SyntheticEvent) => {
@@ -35,37 +36,35 @@ class LogIn extends React.Component<SampleProps> {
         // const { username, password } = this.state;
 
         return (
-            <>
-                <Wrapper>
-                    <Logo colored="white" />
-                    <FormContainer>
-                        <Heading title="Войти" />
-                        <Text>
-                            Новый пользователь?&nbsp;
-                            <Button onClick={this.showSignUpPage}>Зарегистрируйтесь</Button>
-                        </Text>
-                        <Form onSubmit={this.submitForm}>
-                            <Label htmlFor="username">Имя пользователя*</Label>
-                            <Input
-                                type="text"
-                                id="username"
-                                placeholder="Введите имя"
-                                // value={username}
-                                // onChange={this.handleUsernameChange}
-                            />
-                            <Label htmlFor="password">Пароль*</Label>
-                            <Input
-                                type="password"
-                                id="password"
-                                placeholder="Введите пароль"
-                                // value={password}
-                                // onChange={this.handlePasswordChange}
-                            />
-                            <Submit name="Войти" />
-                        </Form>
-                    </FormContainer>
-                </Wrapper>
-            </>
+            <Wrapper>
+                <Logo colored="white" />
+                <FormContainer>
+                    <Heading title="Войти" />
+                    <Text>
+                        Новый пользователь?&nbsp;
+                        <StyledButton onClick={this.showSignUpPage}>Зарегистрируйтесь</StyledButton>
+                    </Text>
+                    <Form onSubmit={this.submitForm}>
+                        <Label htmlFor="username">Имя пользователя*</Label>
+                        <Input
+                            type="text"
+                            id="username"
+                            placeholder="Введите имя"
+                            // value={username}
+                            // onChange={this.handleUsernameChange}
+                        />
+                        <Label htmlFor="password">Пароль*</Label>
+                        <Input
+                            type="password"
+                            id="password"
+                            placeholder="Введите пароль"
+                            // value={password}
+                            // onChange={this.handlePasswordChange}
+                        />
+                        <Button name="Войти" />
+                    </Form>
+                </FormContainer>
+            </Wrapper>
         );
     }
 }
@@ -103,7 +102,7 @@ const Text = styled.div`
     margin-bottom: 40px;
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
     color: #1473e6;
     font-size: 16px;
     font-weight: 400;

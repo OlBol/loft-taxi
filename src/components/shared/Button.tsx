@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledSubmit = styled.button`
+const Button = ({ name }: { name: string }) => <StyledButton type="submit">{name}</StyledButton>;
+
+export default Button;
+
+const StyledButton = styled.button`
     align-self: flex-end;
     padding: 15px 50px;
     font-size: 21px;
@@ -10,7 +14,3 @@ const StyledSubmit = styled.button`
     border-radius: 4px;
     background-color: #ffc617;
 `;
-
-const Submit = ({ name }: { name: string }) => <StyledSubmit type="submit">{name}</StyledSubmit>;
-
-export default Submit;

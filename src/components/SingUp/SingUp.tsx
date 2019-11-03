@@ -4,7 +4,42 @@ import bg from '../../assets/images/bg.png';
 import Logo from '../shared/Logo';
 import Heading from '../shared/Heading';
 import Input from '../shared/Input';
-import Submit from '../shared/Submit';
+import Button from '../shared/Button';
+
+const SingUp = ({ setPage }: { setPage: any }) => {
+    const submitForm = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+        setPage('map');
+    };
+
+    const showLogInPage = () => setPage('login');
+
+    return (
+        <Wrapper>
+            <Logo colored="white" />
+            <FormContainer>
+                <Heading title="Войти" />
+                <Text>
+                    Уже зарегистрирован?&nbsp;
+                    <StyledButton onClick={showLogInPage}>Войти</StyledButton>
+                </Text>
+                <Form onSubmit={submitForm}>
+                    <Label htmlFor="newEmail">Адрес электронной почты</Label>
+                    <Input type="email" id="newEmail" placeholder="Введите адрес" />
+                    <Label htmlFor="newName">Имя</Label>
+                    <Input type="text" id="newName" placeholder="Введите имя" />
+                    <Label htmlFor="newSurname">Фамилия</Label>
+                    <Input type="text" id="newSurname" placeholder="Введите фамилию" />
+                    <Label htmlFor="newPassword">Пароль</Label>
+                    <Input type="password" id="newPassword" placeholder="Введите пароль" />
+                    <Button name="Зарегистрироваться" />
+                </Form>
+            </FormContainer>
+        </Wrapper>
+    );
+};
+
+export default SingUp;
 
 const Wrapper = styled.div`
     min-height: 100vh;
@@ -37,7 +72,7 @@ const Text = styled.div`
     margin-bottom: 40px;
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
     color: #1473e6;
     font-size: 16px;
     font-weight: 400;
@@ -56,40 +91,3 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
 `;
-
-const SingUp = ({ setPage }: { setPage: any }) => {
-    const submitForm = (e: React.SyntheticEvent) => {
-        e.preventDefault();
-        setPage('map');
-    };
-
-    const showLogInPage = () => setPage('login');
-
-    return (
-        <>
-            <Wrapper>
-                <Logo colored="white" />
-                <FormContainer>
-                    <Heading title="Войти" />
-                    <Text>
-                        Уже зарегистрирован?&nbsp;
-                        <Button onClick={showLogInPage}>Войти</Button>
-                    </Text>
-                    <Form onSubmit={submitForm}>
-                        <Label htmlFor="newEmail">Адрес электронной почты</Label>
-                        <Input type="email" id="newEmail" placeholder="Введите адрес" />
-                        <Label htmlFor="newName">Имя</Label>
-                        <Input type="text" id="newName" placeholder="Введите имя" />
-                        <Label htmlFor="newSurname">Фамилия</Label>
-                        <Input type="text" id="newSurname" placeholder="Введите фамилию" />
-                        <Label htmlFor="newPassword">Пароль</Label>
-                        <Input type="password" id="newPassword" placeholder="Введите пароль" />
-                        <Submit name="Зарегистрироваться" />
-                    </Form>
-                </FormContainer>
-            </Wrapper>
-        </>
-    );
-};
-
-export default SingUp;
