@@ -2,32 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 
-const Header = ({ page, setPage }: { page: any; setPage: any }) => {
-    const onClick = (link: string) => {
-        setPage(link);
-    };
+interface Pages {
+    id: number;
+    name: string;
+    route: string;
+}
 
+const pages: Pages[] = [
+    { id: 0, name: 'Карта', route: 'map' },
+    { id: 1, name: 'Профиль', route: 'profile' },
+    { id: 2, name: 'Выйти', route: 'logOut' },
+];
+
+const Header = ({ onChangePage }: { onChangePage: (route: string) => void }) => {
     return (
         <Wrapper>
             <Container>
                 <Logo colored="black" />
                 <nav>
                     <List>
-                        <Item>
-                            <Button onClick={() => onClick('map')} colored={page === 'map'}>
-                                Карта
-                            </Button>
-                        </Item>
-                        <Item>
-                            <Button onClick={() => onClick('profile')} colored={page === 'profile'}>
-                                Профиль
-                            </Button>
-                        </Item>
-                        <Item>
-                            <Button onClick={() => onClick('login')} colored={false}>
-                                Выйти
-                            </Button>
-                        </Item>
+                        {pages.map(({ id, name, route }) => (
+                            <Item key={id}>
+                                <Button onClick={() => onChangePage(route)}>{name}</Button>
+                            </Item>
+                        ))}
                     </List>
                 </nav>
             </Container>
@@ -56,8 +54,6 @@ const Button = styled.button`
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
-    background-color: ${({ colored }: { colored: boolean }) =>
-        colored ? '#f2f2f2' : 'transparent'};
     border-radius: 2px;
 `;
 
