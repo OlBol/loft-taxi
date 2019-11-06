@@ -1,14 +1,11 @@
 import React from 'react';
-import Layout from './components/shared/Layout';
-import AuthPage from './components/AuthPage/AuthPage';
-import { AuthContext, AuthProvider } from './components/shared/AuthContext';
+import Main from './components/shared/Main';
+import { AuthProvider } from './components/shared/AuthContext';
 
 const App: React.FC = () => {
-    const { isAuth } = React.useContext(AuthContext);
-
     return (
         <AuthProvider>
-            {isAuth ? <AuthPage /> : <Layout />}
+            <Main />
         </AuthProvider>
     );
 };

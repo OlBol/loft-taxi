@@ -6,13 +6,13 @@ interface AuthContextState {
 
 interface IAuthContext {
     isAuth: boolean;
-    authHandler?: () => void;
-    getProviderValue?: () => void;
+    login?: () => void;
+    logout?: () => void;
 }
 
 const AuthContext = React.createContext<IAuthContext>({ isAuth: false });
 
-class AuthProvider extends React.Component<{}, AuthContextState> {
+class AuthProvider extends React.Component {
     state: AuthContextState = {
         isAuth: false,
     };
