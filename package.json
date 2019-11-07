@@ -9,11 +9,14 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "@types/styled-components": "^4.1.20",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "mapbox-gl": "^1.5.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-test-renderer": "^16.11.0",
     "styled-components": "^4.4.0",
     "typescript": "^3.6.4"
   },
@@ -22,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write src/App.js src/components/*/*",
+    "prettier": "prettier --write src/App.tsx src/components/*/*.tsx",
     "linter": "eslint src/App.js src/components/*/*"
   },
   "eslintConfig": {

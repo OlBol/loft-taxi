@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../assets/images/logo.svg';
-import logoWhite from '../../assets/images/logo-white.svg';
+import logo from '../../assets/images/black-logo.svg';
+import logoWhite from '../../assets/images/white-logo.svg';
 
 const Logo = ({ colored }: { colored: string }) => {
     return colored === 'white' ? (
