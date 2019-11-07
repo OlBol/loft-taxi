@@ -1,7 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div``;
 
 const Profile = () => {
-    return <div>Profile</div>;
+    return <Wrapper>Profile</Wrapper>;
 };
 
 export default Profile;
