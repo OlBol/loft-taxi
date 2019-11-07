@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import { AuthContext } from './AuthContext';
-import Map from '../Map/Map';
-import Profile from '../Profile/Profile';
+import Header from '../Header';
+import { AuthContext } from '../AuthContext';
+import Map from '../Map';
+import Profile from '../Profile';
 
 interface LayoutState {
     showMapPage: boolean;

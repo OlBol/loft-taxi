@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Heading from '../shared/Heading';
-import Input from '../shared/Input';
-import Button from '../shared/Button';
+import Heading from '../Heading';
+import Input from '../Input';
+import Button from '../Button';
 
 const LogIn = ({
     onSubmitForm,

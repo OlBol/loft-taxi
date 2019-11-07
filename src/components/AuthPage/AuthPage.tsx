@@ -1,8 +1,8 @@
 import React from 'react';
-import Logo from '../shared/Logo';
-import LogIn from './LogIn';
-import SignUp from './SignUp';
-import { AuthContext } from '../shared/AuthContext';
+import Logo from '../Logo';
+import LogIn from '../LogIn';
+import SignUp from '../SignUp';
+import { AuthContext } from '../AuthContext';
 import styled from 'styled-components';
 import bg from '../../assets/images/bg.png';
 

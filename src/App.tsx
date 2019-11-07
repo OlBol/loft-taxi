@@ -1,6 +1,6 @@
 import React from 'react';
-import Main from './components/shared/Main';
-import { AuthProvider } from './components/shared/AuthContext';
+import Main from './components/Main';
+import { AuthProvider } from './components/AuthContext';
 
 const App: React.FC = () => {
     return (
