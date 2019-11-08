@@ -1,17 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Heading from './Heading';
 
 describe('Heading', () => {
-    it('компонент рендерится без ошибок', () => {
-        const heading = shallow(<Heading />);
+    it('компонент отображается корректно', () => {
+        const headingTree = renderer.create(<Heading title="Заголовок" />).toJSON();
 
-        expect(heading).toBeTruthy;
-    });
-
-    it('тест заголовка совпадает с текстом, переданным ему в пропсах', () => {
-        const heading = shallow(<Heading title="Заголовок" />);
-
-        expect(heading.text()).toContain('Заголовок');
+        expect(headingTree).toMatchSnapshot();
     });
 });

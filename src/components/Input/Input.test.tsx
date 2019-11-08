@@ -1,22 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Input from './Input';
-import Button from './Button';
 
-describe('Heading', () => {
-    it('компонент рендерится без ошибок', () => {
-        const input = shallow(<Input />);
+describe('Input', () => {
+    it('компонент отображается корректно', () => {
+        const inputTree = renderer
+            .create(<Input type="text" id="id" placeholder="описание" />)
+            .toJSON();
 
-        expect(input).toBeTruthy;
-    });
-
-    it('значения пропсов компонента отображаются корректно', () => {
-        const input = shallow(
-            <Input type="тип" id="идентификатор" placeholder="шаблонное описание" />,
-        );
-
-        expect(input.props()['type']).toBe('тип');
-        expect(input.props()['id']).toBe('идентификатор');
-        expect(input.props()['placeholder']).toBe('шаблонное описание');
+        expect(inputTree).toMatchSnapshot();
     });
 });
