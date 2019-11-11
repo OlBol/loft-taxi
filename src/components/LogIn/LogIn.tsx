@@ -12,11 +12,13 @@ const LogIn = ({
     onChangeToSignUp: () => void;
 }) => {
     return (
-        <FormContainer>
+        <FormContainer data-testid="login-container">
             <Heading title="Войти" />
             <Text>
                 Новый пользователь?&nbsp;
-                <StyledButton onClick={onChangeToSignUp}>Зарегистрируйтесь</StyledButton>
+                <StyledButton onClick={onChangeToSignUp} data-testid="onChangeToSignUp">
+                    Зарегистрируйтесь
+                </StyledButton>
             </Text>
             <Form onSubmit={onSubmitForm}>
                 <Label htmlFor="username">Имя пользователя*</Label>
