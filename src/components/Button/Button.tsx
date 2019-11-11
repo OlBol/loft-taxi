@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ name }: { name: string }) => <StyledButton type="submit">{name}</StyledButton>;
+const Button = ({ name }: { name: string }) => (
+    <StyledButton type="submit" data-testid="auth-btn">
+        {name}
+    </StyledButton>
+);
 
 export default Button;
 

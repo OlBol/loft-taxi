@@ -42,7 +42,7 @@ class AuthPage extends React.Component {
     render() {
         const { showLogIn, showSignUp } = this.state;
         return (
-            <Wrapper>
+            <Wrapper data-testid="auth-page">
                 <Logo colored="white" />
                 {showLogIn && (
                     <LogIn

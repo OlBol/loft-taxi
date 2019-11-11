@@ -37,11 +37,11 @@ class Layout extends React.Component {
     render() {
         const { showMapPage, showProfilePage } = this.state;
         return (
-            <>
+            <div data-testid="layout">
                 <Header onChangePage={this.onChangePage} />
                 {showMapPage && <Map />}
                 {showProfilePage && <Profile />}
-            </>
+            </div>
         );
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react';
 import Layout from './Layout';
 import { pages } from '../Header';
 
@@ -12,7 +12,7 @@ describe('Layout', () => {
 
     it('при переключении на карту в header открывается страница с картой', () => {
         const { queryByTestId } = render(<Layout />);
-        const { route: route} = pages[0];
+        const { route: route } = pages[0];
 
         fireEvent.click(queryByTestId(`${route}-btn`));
         expect(queryByTestId('map')).toBeTruthy();
@@ -20,10 +20,9 @@ describe('Layout', () => {
 
     it('при переключении на профиль в header открывается страница с профилем', () => {
         const { queryByTestId } = render(<Layout />);
-        const { route: route} = pages[1];
+        const { route: route } = pages[1];
 
         fireEvent.click(queryByTestId(`${route}-btn`));
         expect(queryByTestId('profile')).toBeTruthy();
     });
-
 });

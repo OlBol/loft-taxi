@@ -3,6 +3,7 @@
 exports[`Button компонент отображается корректно 1`] = `
 <button
   className="sc-bdVaJa cTCHOq"
+  data-testid="auth-btn"
   type="submit"
 />
 `;
