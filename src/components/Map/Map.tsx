@@ -25,10 +25,10 @@ class Map extends React.Component {
 
     render() {
         return (
-            <>
+            <div data-testid='map'>
                 <div />
                 <MapContainer ref={this.mapNode} />
-            </>
+            </div>
         );
     }
 }

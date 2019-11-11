@@ -8,7 +8,7 @@ interface Pages {
     route: string;
 }
 
-const pages: Pages[] = [
+export const pages: Pages[] = [
     { id: 0, name: 'Карта', route: 'map' },
     { id: 1, name: 'Профиль', route: 'profile' },
     { id: 2, name: 'Выйти', route: 'logOut' },
@@ -23,7 +23,12 @@ const Header = ({ onChangePage }: { onChangePage: (route: string) => void }) => 
                     <List>
                         {pages.map(({ id, name, route }) => (
                             <Item key={id}>
-                                <Button onClick={() => onChangePage(route)}>{name}</Button>
+                                <Button
+                                    onClick={() => onChangePage(route)}
+                                    data-testid={`${route}-btn`}
+                                >
+                                    {name}
+                                </Button>
                             </Item>
                         ))}
                     </List>

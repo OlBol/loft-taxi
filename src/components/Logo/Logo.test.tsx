@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Logo from './Logo';
 
 describe('Logo', () => {
-    it('компонент рендерится без ошибок', () => {
+    it('компонент отображается корректно', () => {
         const logo = shallow(<Logo />);
 
         expect(logo).toBeTruthy();
