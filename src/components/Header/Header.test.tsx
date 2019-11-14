@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import LogIn from './LogIn';
+import Header from './Header';
 
-describe('LogIn', () => {
+describe('Header', () => {
     it('компонент отображается корректно', () => {
-        const { queryByTestId } = render(<LogIn />);
+        const { queryByTestId } = render(<Header />);
 
-        expect(queryByTestId('login-container')).toBeTruthy();
+        expect(queryByTestId('header')).toBeTruthy();
     });
 });

@@ -16,7 +16,7 @@ export const pages: Pages[] = [
 
 const Header = ({ onChangePage }: { onChangePage: (route: string) => void }) => {
     return (
-        <Wrapper>
+        <Wrapper data-testid="header">
             <Container>
                 <Logo colored="black" />
                 <nav>
